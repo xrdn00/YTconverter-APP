@@ -14,7 +14,7 @@ from tkinter import filedialog
 
 
 app = Tk()
-dl_type = ['Download Type']
+dl_type = ''
 file_dir = f"{os.environ['UserProfile']}/Downloads"
 
 """FUNCTIONS INCLUDE Clipboard, Convert Button, Download Button and Options for dropdown menu"""
@@ -26,12 +26,13 @@ def clipboard():
     entry.insert('end',paste)
 def options(choice):
     print(choice)
-    dl_type.clear()
-    dl_type.append(choice)
+    global dl_type
+    dl_type = choice
     print(dl_type)
     if choice == 'Download Type':
         file_format.configure(text='File Format: ')
         button0.configure(state='disabled')
+        button1.configure(state='disabled')
     elif choice == 'Audio Download':
         file_format.configure(text='File Format: MP4 (Audio)')
         button0.configure(state='normal')
@@ -129,9 +130,6 @@ def download():
     dl_progress.configure(text='Downloading')
     
     
-        #NEXT
-        #FILE FORMAT
-        #FILE DIRECTORY
 
     try:
 
@@ -172,12 +170,6 @@ def download():
         destroy_inv_url()
         button1.configure(state='disabled')
         
-
-        
-
-
-
-
 
 
 
