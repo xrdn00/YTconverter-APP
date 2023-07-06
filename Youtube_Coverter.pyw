@@ -250,7 +250,7 @@ file_format.place(x=1200,y=300)
 file_directory = customtkinter.CTkLabel(master = app,text='File Directory: {}'.format(file_dir),font=('Arial',20),text_color='black')
 file_directory.place(x=1200,y=350)
 
-save = customtkinter.CTkButton(master=app,text = 'Change file directory',font=('Arial',20),text_color = 'white',fg_color = "gray",hover_color='black',command=save)
+save = customtkinter.CTkButton(master=app,text = 'Change file directory',font=('Arial',15),text_color = 'white',fg_color = "gray",hover_color='black',command=save,width = 50,height=20)
 save.place(x=1200,y=400)
 
 
