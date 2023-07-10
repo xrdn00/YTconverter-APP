@@ -11,10 +11,9 @@ from tkinter import filedialog
 
 
 
-
-
 app = Tk()
 dl_type = ''
+#default directory
 file_dir = f"{os.environ['UserProfile']}/Downloads"
 
 """FUNCTIONS INCLUDE Clipboard, Convert Button, Download Button and Options for dropdown menu"""
@@ -90,9 +89,23 @@ def convert():
             vid_title.configure(text=t_info,font=('Arial',20),width=853,text_color='black') 
             thumbnail.configure(image=photo)
             button1.configure(state='normal')
+            
+
 
         except:
-            print("No thumbnail exception error")
+            print("No thumbnail exception error and not a youtube website url")
+            button1.configure(state='disabled')
+            def destroy_inv_url():
+                
+
+                invalid = customtkinter.CTkLabel(master=app,text="Invalid URL",text_color="red",fg_color="black",font=("Arial",50),width=853,height=480)
+                invalid.place(x=102,y=102)
+                
+                def inv():
+                    
+                    invalid.destroy()
+                app.after(1000,inv)
+            destroy_inv_url()
             button1.configure(state='disabled')
         
     try:
