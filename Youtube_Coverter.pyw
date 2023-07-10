@@ -236,10 +236,11 @@ button2 = customtkinter.CTkButton(master=app,text='Paste',font=('Arial',13),fg_c
 button2.place(x=520,y=601)
 vid_title = customtkinter.CTkLabel(master=app,text='',font=('Arial',20),width=853,text_color='black')
 vid_title.place(x=101,y=70)
-canvas = customtkinter.CTkCanvas(master=app,width=853,height=480,bg='black')
+canvas = customtkinter.CTkCanvas(master=app,width=853,height=480,bg='black',highlightthickness=0)
 canvas.place(x=100,y=100)
+
 thumbnail = customtkinter.CTkLabel(master=canvas,text='')
-thumbnail.place(x=2,y=2)
+thumbnail.place(x=0,y=0)
 
 
 
